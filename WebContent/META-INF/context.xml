@@ -8,4 +8,14 @@
         username="root"
         password="root"
         url="jdbc:mysql://localhost:3306/storage?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"/>
+        <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Restricted Files</web-resource-name>
+            <url-pattern>/WEB-INF/web.xml</url-pattern>
+            <url-pattern>/META-INF/context.xml</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>NO-ONE</role-name>
+        </auth-constraint>
+    </security-constraint>
 </Context>
